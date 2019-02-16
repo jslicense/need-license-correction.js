@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "devDependencies": {
+    "package-json": "^6.0.0"
+  },
+  "dependencies": {
+    "run-parallel-limit": "^1.0.5",
+    "spdx-expression-validate": "^2.0.0"
+  }
+}
