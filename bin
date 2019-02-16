@@ -20,14 +20,17 @@ runParallelLimit(
           Object.keys(versions).forEach(function (version) {
             var metadata = versions[version]
             var license = metadata.license
+            var nameAndVersion = name + ',' + version
             if (Array.isArray(metadata.licenses)) {
-              console.log(name + '@' + version + ': licenses array')
+              console.log(nameAndVersion + ',licenses is array')
+            } else if (Array.isArray(license)) {
+              console.log(nameAndVersion + ',license is array')
             } else if (!license) {
-              console.log(name + '@' + version + ': no license property')
+              console.log(nameAndVersion + ',no license property')
             } else if (typeof license !== 'string') {
-              console.log(name + '@' + version + ': license not a string')
+              console.log(nameAndVersion + ',license not a string')
             } else if (!spdxExpressionValidate(license)) {
-              console.log(name + '@' + version + ': invalid license expression ' + JSON.stringify(license))
+              console.log(nameAndVersion + ',invalid expression')
             }
             done()
           })
