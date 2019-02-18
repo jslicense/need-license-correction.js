@@ -4,6 +4,7 @@
     "package-json": "^6.0.0"
   },
   "dependencies": {
+    "correct-license-metadata": "^1.1.0",
     "run-parallel-limit": "^1.0.5",
     "spdx-expression-validate": "^2.0.0"
   }
