@@ -21,9 +21,10 @@ runParallelLimit(
           Object.keys(versions).forEach(function (version) {
             var metadata = versions[version]
             var license = metadata.license
+            var licenses = metadata.licenses
             var nameAndVersion = name + ',' + version
             if (correctLicenseMetadata(metadata)) return done()
-            if (Array.isArray(metadata.licenses)) {
+            if (Array.isArray(licenses)) {
               console.log(nameAndVersion + ',licenses is array,' + JSON.stringify(licenses))
             } else if (Array.isArray(license)) {
               console.log(nameAndVersion + ',license is array,' + JSON.stringify(licenses))
